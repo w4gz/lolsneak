@@ -1,0 +1,152 @@
+<head>
+<title>W3schools code editor</title>
+
+</head>
+<body onload="retrieveValues(), lal()">
+<div id="hp" class="ho">
+<input type="text" placeholder="search for quizzes here" id="hi"></input>
+<button onclick="hi()">search</button>
+</div>
+
+<div id="ho" class="ho">
+<button onclick="h1()" id="s1">shortcut</button>
+<button onclick="h2()" id="s2">shortcut</button>
+<button onclick="h3()" id="s3">shortcut</button>
+<button onclick="h4()" id="s4">shortcut</button>
+</div>
+<div id="hey" class="ho">
+<button onclick="p1()">change shortcuts</button>
+<button onclick="save()">save shortcuts</button>
+</div>
+
+<iframe class="asp" height="100%" width="100%" src="" id="hakf"></iframe>
+</body>
+<script>
+var p = 0;
+var urls = ["", "", "", ""];
+var a;
+var b;
+var c;
+var d;
+
+function h1() {
+if (p == 1) {
+var nn = prompt("new name");
+s1.textContent = nn;
+a = nn;
+var nu = prompt("new url");
+urls[0] = nu;
+p = 0;
+} else {
+document.getElementById('hakf').src = "https://" + urls[0];
+}
+}
+
+function h2() {
+if (p == 1) {
+var nn = prompt("new name");
+s2.textContent = nn;
+b = nn;
+var nu = prompt("new url");
+urls[1] = nu;
+p = 0;
+} else {
+document.getElementById('hakf').src = "https://" + urls[1];
+}
+}
+
+function h3() {
+if (p == 1) {
+var nn = prompt("new name");
+s3.textContent = nn;
+c = nn;
+var nu = prompt("new url");
+urls[2] = nu;
+p = 0;
+} else {
+document.getElementById('hakf').src = "https://" + urls[2];
+}
+}
+
+function h4() {
+if (p == 1) {
+var nn = prompt("new name");
+s4.textContent = nn;
+d = nn;
+var nu = prompt("url");
+urls[3] = nu;
+p = 0;
+} else {
+document.getElementById('hakf').src = "https://" + urls[3];
+}
+}
+
+
+function save() {
+updateValues(p,urls,a,b,c,d);
+}
+
+function updateValues() {
+  
+  storeValues();
+}
+
+function retrieveValues() {
+  var values = JSON.parse(localStorage.getItem('values'));
+  p = values.p;
+  urls = values.urls;
+  a = values.a;
+  b = values.b;
+  c = values.c;
+  d = values.d;
+  }
+
+function storeValues() {
+var values = {
+p: p,
+urls: urls,
+a: a,
+b: b,
+c: c,
+d: d
+};
+localStorage.setItem('values', JSON.stringify(values));
+}
+
+
+function lal() {
+s1.innerHTML = a;
+s2.innerHTML = b;
+s3.innerHTML = c;
+s4.innerHTML = d;
+}
+
+function p1() {
+if (p == 1) {
+p = 0;
+} else {
+p = 1;
+}
+}
+
+
+
+function hi() {
+var url = document.getElementById("hi").value;
+document.getElementById("hakf").src = url;
+}
+
+
+
+</script>
+<style>
+
+.ho {
+background-color: black;
+padding: 5px;
+border-radius: 3px;
+display: inline-block;
+}
+
+
+</style>
