@@ -24,6 +24,7 @@
 <iframe class="asp" height="100%" width="100%" src="" id="hakf"></iframe>
 </body>
 <script>
+var w = "";
 var p = 0;
 var urls = ["", "", "", ""];
 var a;
@@ -42,6 +43,7 @@ urls[0] = nu;
 p = 0;
 } else {
 document.getElementById('hakf').src = urls[0];
+w = urls[0];
 }
 }
 
@@ -57,6 +59,7 @@ urls[1] = nu;
 p = 0;
 } else {
 document.getElementById('hakf').src = urls[1];
+w = urls[1];
 }
 }
 
@@ -77,6 +80,7 @@ urls[2] = nu;
 p = 0;
 } else {
 document.getElementById('hakf').src = urls[2];
+w = urls[2];
 }
 }
 
@@ -90,6 +94,7 @@ urls[3] = nu;
 p = 0;
 } else {
 document.getElementById('hakf').src = urls[3];
+w = urls[3];
 }
 }
 
@@ -149,17 +154,21 @@ p = 1;
 function hi() {
 var url = document.getElementById("hi").value;
 document.getElementById("hakf").src = url;
+w = url;
 }
 
 function sneklol() {
+if (w == "" || w == null) {
+alert("you have to type in a valid address to be opened in about:blank");
+} else {
 var win = window.open('about:blank')
-var url = "https://w4gz.github.io/lolsneak"
 var iframe = win.document.createElement('iframe')
 iframe.style.width = "100%";
 iframe.style.height = "100%";
 iframe.style.border = "none";
-iframe.src = url
+iframe.src = w
 win.document.body.appendChild(iframe)
+}
 }
 </script>
 <style>
