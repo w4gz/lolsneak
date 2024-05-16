@@ -17,6 +17,7 @@
 <div id="hey" class="ho">
 <button onclick="p1()">change shortcuts</button>
 <button onclick="save()">save shortcuts</button>
+<button onclick="sneklol()">open in about:blank</button>button>
 </div>
 
 <iframe class="asp" height="100%" width="100%" src="" id="hakf"></iframe>
@@ -42,6 +43,8 @@ document.getElementById('hakf').src = urls[0];
 }
 }
 
+
+  
 function h2() {
 if (p == 1) {
 var nn = prompt("new name");
@@ -136,8 +139,16 @@ var url = document.getElementById("hi").value;
 document.getElementById("hakf").src = url;
 }
 
-
-
+function sneklol() {
+var win = window.open('about:blank')// <-- include the URL 
+var url = "https://examplewebsite.com"
+var iframe = win.document.createElement('iframe')
+iframe.style.width = "100%";
+iframe.style.height = "100%";
+iframe.style.border = "none";
+iframe.src = url
+win.document.body.appendChild(iframe)
+}
 </script>
 <style>
 
