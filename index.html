@@ -1,5 +1,5 @@
 <head>
-<title>github code editor</title>
+<title id="aaa">github code editor</title>
 
 </head>
 <body onload="retrieveValues(), lal()">
@@ -17,7 +17,8 @@
 <div id="hey" class="ho">
 <button onclick="p1()">change shortcuts</button>
 <button onclick="save()">save shortcuts</button>
-<button onclick="sneklol()">open in about:blank</button>button>
+<button onclick="ft()">edit title</button>
+<button onclick="sneklol()">open in about:blank</button>
 </div>
 
 <iframe class="asp" height="100%" width="100%" src="" id="hakf"></iframe>
@@ -29,6 +30,7 @@ var a;
 var b;
 var c;
 var d;
+var tl;
 
 function h1() {
 if (p == 1) {
@@ -58,6 +60,13 @@ document.getElementById('hakf').src = urls[1];
 }
 }
 
+
+function ft() {
+var nn = prompt("new name");
+tl = nn;
+aaa.innerHTML = nn;
+} 
+  
 function h3() {
 if (p == 1) {
 var nn = prompt("new name");
@@ -86,7 +95,7 @@ document.getElementById('hakf').src = urls[3];
 
 
 function save() {
-updateValues(p,urls,a,b,c,d);
+updateValues(p,urls,a,b,c,d,tl);
 }
 
 function updateValues() {
@@ -102,6 +111,7 @@ function retrieveValues() {
   b = values.b;
   c = values.c;
   d = values.d;
+  tl = values.tl;
   }
 
 function storeValues() {
@@ -111,7 +121,8 @@ urls: urls,
 a: a,
 b: b,
 c: c,
-d: d
+d: d,
+tl: tl
 };
 localStorage.setItem('values', JSON.stringify(values));
 }
@@ -122,6 +133,7 @@ s1.innerHTML = a;
 s2.innerHTML = b;
 s3.innerHTML = c;
 s4.innerHTML = d;
+aaa.innerHTML = tl;
 }
 
 function p1() {
